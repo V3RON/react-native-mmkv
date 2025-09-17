@@ -10,6 +10,10 @@ const { withRnHarness } = require('@react-native-harness/metro');
  */
 const config = {
   watchFolders: [path.resolve(__dirname, '..')],
+  resolver: {
+    // Enable resolution of __tests__
+    blockList: undefined,
+  },
 };
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);

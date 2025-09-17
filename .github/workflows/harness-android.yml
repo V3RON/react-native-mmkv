@@ -19,7 +19,7 @@ on:
       device_profile:
         description: "Device profile"
         required: false
-        default: "pixel_8"
+        default: "pixel_7"
         type: string
       avd_name:
         description: "AVD name"
@@ -59,7 +59,7 @@ env:
   # Device configuration - can be overridden by workflow_dispatch inputs
   DEVICE_API_LEVEL: ${{ github.event.inputs.device_api_level || '35' }}
   DEVICE_ARCH: ${{ github.event.inputs.device_arch || 'x86_64' }}
-  DEVICE_PROFILE: ${{ github.event.inputs.device_profile || 'pixel_8' }}
+  DEVICE_PROFILE: ${{ github.event.inputs.device_profile || 'pixel_7' }}
   AVD_NAME: ${{ github.event.inputs.avd_name || 'Pixel_8_API_35' }}
 
 jobs:

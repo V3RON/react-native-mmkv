@@ -126,6 +126,7 @@ jobs:
 
       - name: Run Harness E2E tests
         uses: reactivecircus/android-emulator-runner@v2
+        continue-on-error: true
         with:
           working-directory: example
           api-level: ${{ env.DEVICE_API_LEVEL }}

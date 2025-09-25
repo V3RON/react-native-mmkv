@@ -7,6 +7,7 @@ const config = {
       platform: 'android',
       deviceId: 'Pixel_8_API_35',
       bundleId: 'com.mrousavy.mmkv.example',
+      activityName: '.MainActivity',
     },
     {
       name: 'ios',

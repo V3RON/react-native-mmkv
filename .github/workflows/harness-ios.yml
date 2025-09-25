@@ -17,18 +17,6 @@ on:
     workflows: ["Build iOS"]
     types:
       - completed
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/harness-ios.yml"
-      - "example/__tests__/**"
-      - "example/rn-harness.config.mjs"
-  pull_request:
-    paths:
-      - ".github/workflows/harness-ios.yml"
-      - "example/__tests__/**"
-      - "example/rn-harness.config.mjs"
 
 env:
   # Device configuration - can be overridden by workflow_dispatch inputs
@@ -53,7 +41,7 @@ jobs:
           name: ios-app
           path: example/ios/build/Build/Products/Debug-iphonesimulator/
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id || github.run_id }}
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: Setup iOS Simulator
         uses: futureware-tech/simulator-action@v4

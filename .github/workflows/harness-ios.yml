@@ -71,14 +71,6 @@ jobs:
       - name: Restore ccache
         uses: hendrikmuhs/ccache-action@v1.2
 
-      - name: Cache Xcode DerivedData
-        uses: actions/cache@v4
-        with:
-          path: ~/Library/Developer/Xcode/DerivedData
-          key: ${{ runner.os }}-xcode-deriveddata-${{ hashFiles('**/*.xcodeproj/project.pbxproj', '**/*.xcworkspace/contents.xcworkspacedata') }}
-          restore-keys: |
-            ${{ runner.os }}-xcode-deriveddata-
-
       - name: Setup Ruby (bundle)
         uses: ruby/setup-ruby@v1
         with:

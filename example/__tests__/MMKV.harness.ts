@@ -4,7 +4,7 @@ import {
   expect,
   beforeEach,
   afterEach,
-} from '@react-native-harness/runtime';
+} from 'react-native-harness';
 import { MMKV, createMMKV } from 'react-native-mmkv';
 
 const waitForNextTick = async () => {

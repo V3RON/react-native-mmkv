@@ -16,4 +16,4 @@ const config = {
   },
 };
 
-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+module.exports = withRnHarness(mergeConfig(getDefaultConfig(__dirname), config));

@@ -30,18 +30,6 @@ on:
     workflows: ["Build Android"]
     types:
       - completed
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/harness-android.yml"
-      - "example/__tests__/**"
-      - "example/rn-harness.config.mjs"
-  pull_request:
-    paths:
-      - ".github/workflows/harness-android.yml"
-      - "example/__tests__/**"
-      - "example/rn-harness.config.mjs"
 
 env:
   # Device configuration - can be overridden by workflow_dispatch inputs
@@ -68,7 +56,7 @@ jobs:
           name: android-apk
           path: example/android/app/build/outputs/apk/debug/
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id || github.run_id }}
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: Enable KVM group perms
         run: |
